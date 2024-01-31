@@ -70,13 +70,13 @@ const CardContextProvider = ({
     for (var i = 0; i < 2; ++i) {
       ySum = yourDraw(ySum);
     }
-    setYourSum(ySum);
+    setYourSum(getDeckValue(yDeck));
     setYourDeck(yDeck);
 
     for (var i = 0; i < 2; ++i) {
       dSum = dealerDraw(dSum);
     }
-    setDealerSum(dSum);
+    setDealerSum(getDeckValue(dDeck));
     setDealerDeck(dDeck);
     //完成了开局发两张牌的效果
   };
@@ -188,7 +188,7 @@ const CardContextProvider = ({
     }
     setRivalStay(false);
     var val = yourDraw(yourSum);
-    setYourSum(val);
+    setYourSum(getDeckValue(yDeck));
     setYourDeck(yDeck);
     setTurn(false);
     await channel.sendEvent({
